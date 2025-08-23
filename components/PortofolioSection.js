@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const portfolioItems = [
   {
@@ -46,6 +47,8 @@ export default function PortfolioSection() {
               <Image
                 src={item.image}
                 alt={item.title}
+                width={500}
+                height={500}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
