@@ -43,7 +43,7 @@ export default function PortfolioSection() {
               }}
               className="bg-gray-50 p-4 rounded-lg transition duration-300"
             >
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
                 className="w-full h-48 object-cover rounded-md mb-4"

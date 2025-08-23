@@ -66,12 +66,12 @@ export default function HeroSection() {
         <div className="text-white flex flex-col justify-start items-start p-12 space-x-6">
           <h2 className="text-2xl font-bold mb-2">Tentang Saya</h2>
           <p className="text-left max-w-5xl text-gray-300 text-sm">
-            Hi! I'm Indra Kurniawan, a passionate Front-end Web Developer with a
+            Hi! Im Indra Kurniawan, a passionate Front-end Web Developer with a
             keen eye for clean, modern, and responsive user interfaces. I love
             turning creative ideas into functional websites and continuously
             explore the latest web technologies. Currently, I focus on building
             dynamic and fast web applications using Next.js, ReactJs, React
-            Native, Kotlin and Tailwind CSS. I'm also enthusiastic about UI/UX
+            Native, Kotlin and Tailwind CSS. Im also enthusiastic about UI/UX
             design and believe that great design is just as important as great
             functionality.
           </p>
