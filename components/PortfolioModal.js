@@ -73,9 +73,13 @@ export default function PortfolioModal({ open, onClose, item }) {
             exit={{ y: 30, opacity: 0, scale: 0.99 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
           >
-            <div className="flex flex-col md:flex-row">
               <div className="md:w-2/3 bg-slate-100">
-                <div className="relative h-64 md:h-96 bg-slate-200 flex items-center justify-center">
+                <div
+                  className="relative h-64 md:h-96 bg-slate-200 flex items-center justify-center touch-pan-y"
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                >
                   {images[index] ? (
                     <Image
                       src={images[index]}
@@ -91,55 +95,18 @@ export default function PortfolioModal({ open, onClose, item }) {
                   )}
                 </div>
 
-                  <div
-                    className="relative h-64 md:h-96 bg-slate-200 flex items-center justify-center touch-pan-y"
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
-                  >
-                    {images[index] ? (
-                      <Image
-                        src={images[index]}
-                        alt={`Image ${index + 1}`}
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center justify-center text-slate-500">
-                        <div className="w-40 h-28 bg-slate-300/60 rounded-md mb-4" />
-                        <div>No image</div>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex items-center justify-between px-4 py-3 gap-4">
+                {/* Simple dot indicators */}
+                <div className="flex items-center justify-center gap-2 p-3 bg-white">
+                  {(images.length ? images : [null]).map((_, i) => (
                     <button
-                      className="px-3 py-2 rounded-md bg-slate-100 hover:bg-slate-200"
-                      onClick={() => setIndex((i) => Math.max(0, i - 1))}
-                      disabled={index === 0}
-                    >
-                      Prev
-                    </button>
-                    <div className="flex-1 text-center text-sm text-slate-600">
-                      {index + 1} / {images.length || 1}
-                    </div>
-                    <button
-                      className="px-3 py-2 rounded-md bg-slate-100 hover:bg-slate-200"
-                      onClick={() =>
-                        setIndex((i) =>
-                          Math.min(i + 1, Math.max(0, images.length - 1)),
-                        )
-                      }
-                      disabled={index >= images.length - 1}
-                    >
-                      Next
-                    </button>
-                  </div>
-
-                  {/* Thumbnails */}
-                  <div className="px-4 py-3 border-t border-slate-200 bg-white">
-                    <div className="flex gap-2 overflow-x-auto">
-                      {(images.length ? images : [null]).map((src, i) => (
+                      key={i}
+                      onClick={() => setIndex(i)}
+                      aria-label={`Go to image ${i + 1}`}
+                      className={`w-2 h-2 rounded-full ${i === index ? "bg-sky-600" : "bg-slate-300"}`}
+                    />
+                  ))}
+                </div>
+              </div>
                         <button
                           key={i}
                           onClick={() => setIndex(i)}
