@@ -4,86 +4,74 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <div className="relative h-screen flex flex-col overflow-hidden">
-      <div
-        className="flex overflow-hidden"
-        style={{ height: "calc(100vh - 192px)" }}
-      >
-        {/* Kiri */}
-        <div className="w-1/2 bg-gray-100 flex flex-col justify-center p-16 z-10">
-          <Image
-            src="/LogoIT.png"
-            alt="logoit"
-            width={500}
-            height={500}
-            className="absolute opacity-10 -top-10 -left-10"
-          />
-          <div className="text-3xl font-bold mb-4 text-black">Hi, I am</div>
-          <h1
-            className="text-7xl font-extrabold text-black"
-            data-aos="fade-up"
-            data-aos-once="false"
-          >
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-sky-100 via-sky-200 to-sky-300 text-slate-900">
+      <div className="absolute inset-0 hero-glow"></div>
+      <div className="absolute -left-24 top-24 w-72 h-72 rounded-full bg-sky-300/30 animate-float"></div>
+      <div className="absolute right-0 top-20 w-80 h-80 rounded-full bg-sky-200/30 animate-float animation-delay-2000"></div>
+      <div className="relative z-10 flex flex-col lg:flex-row items-center min-h-screen">
+        <div className="w-full lg:w-1/2 px-8 py-16 lg:px-16 lg:py-24">
+          <p className="uppercase tracking-[0.35em] text-sm text-cyan-200/80 mb-6">
+            Creative Developer
+          </p>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight mb-6">
             Indra Kurniawan
           </h1>
-          <p
-            className="text-gray-500 mt-4 font-extrabold"
-            data-aos="fade-up"
-            data-aos-once="false"
-          >
-            Web / Mobile Developer
+          <p className="max-w-2xl text-lg md:text-xl text-cyan-100/90 mb-8">
+            I build vibrant, polished digital experiences with modern frontend
+            tools. From responsive layouts to dynamic animations, I bring ideas
+            to life.
           </p>
-
-          {/* Icon Sosmed */}
-          <div className="flex space-x-6 mt-6 text-2xl text-gray-800">
-            <a href="#">
+          <div className="flex flex-wrap gap-4 items-center mb-10">
+            <a
+              href="#portfolio"
+              className="rounded-full bg-sky-700 px-6 py-3 text-white font-semibold shadow-lg shadow-sky-700/20 hover:scale-105 transition-transform"
+            >
+              View Portfolio
+            </a>
+            <a
+              href="/preview"
+              className="rounded-full border border-slate-300/30 px-6 py-3 text-slate-900 hover:bg-slate-100/60 transition"
+            >
+              Preview Screenshots
+            </a>
+          </div>
+          <div className="flex items-center gap-5 text-2xl text-cyan-100">
+            <a href="#" className="hover:text-white transition">
               <FaEnvelope />
             </a>
-            <a href="#">
+            <a href="#" className="hover:text-white transition">
               <FaGithub />
             </a>
-            <a href="#">
+            <a href="#" className="hover:text-white transition">
               <FaLinkedin />
             </a>
           </div>
         </div>
-
-        {/* Kanan */}
-        <div className="w-3/4 relative flex items-center justify-center bg-gray-100">
-          <div className="absolute inset-0 bg-neutral-900 clip-diagonal z-0"></div>
-          <div className="z-10">
-            <Image
-              src="/images/profile.png"
-              alt="Profile"
-              width={600}
-              height={900}
-              className="rounded-lg object-cover"
-            />
+        <div className="w-full lg:w-1/2 px-8 py-16 lg:px-12 lg:py-24 flex justify-center items-center">
+          <div className="relative w-full max-w-xl rounded-[2rem] border border-slate-200/20 bg-white/50 p-6 backdrop-blur-xl shadow-2xl shadow-slate-950/12">
+            <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-sky-300 to-sky-400 opacity-20 blur-3xl"></div>
+            <div className="relative overflow-hidden rounded-[1.75rem] shadow-2xl shadow-slate-950/40">
+              <Image
+                src="/images/profile.png"
+                alt="Profile"
+                width={700}
+                height={900}
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="h-48 bg-neutral-900 flex flex-row">
-        <div className="text-white flex flex-col justify-start items-start p-12 space-x-6">
-          <h2 className="text-2xl font-bold mb-2">Tentang Saya</h2>
-          <p className="text-left max-w-5xl text-gray-300 text-sm">
-            Hi! Im Indra Kurniawan, a passionate Front-end Web Developer with a
-            keen eye for clean, modern, and responsive user interfaces. I love
-            turning creative ideas into functional websites and continuously
-            explore the latest web technologies. Currently, I focus on building
-            dynamic and fast web applications using Next.js, ReactJs, React
-            Native, Kotlin and Tailwind CSS. Im also enthusiastic about UI/UX
-            design and believe that great design is just as important as great
-            functionality.
+      <div className="relative z-10 px-8 py-16 lg:px-16 lg:py-20">
+        <div className="rounded-3xl border border-white/10 bg-white/10 p-10 backdrop-blur-xl shadow-2xl shadow-slate-950/20">
+          <h2 className="text-3xl font-bold mb-4">Tentang Saya</h2>
+          <p className="max-w-4xl text-slate-800 leading-relaxed text-base md:text-lg">
+            Hi! I am Indra Kurniawan, a passionate Front-end Developer who loves
+            polished interfaces and fluid interactions. I focus on responsive
+            web apps with Next.js, React, React Native, Kotlin, and Tailwind
+            CSS. Design, performance, and motion are the ingredients I use to
+            create memorable digital experiences.
           </p>
-        </div>
-        <div>
-          <Image
-            src="/LogoIT.png"
-            alt="logoit"
-            width={300}
-            height={300}
-            // className="rounded-lg object-cover"
-          />
         </div>
       </div>
     </div>
