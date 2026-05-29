@@ -9,25 +9,41 @@ const portfolioItems = [
   {
     title: "Attendance App",
     description: "Built with React, Tailwind, and Firebase.",
-    images: ["/images/portofolio/absensi.png", "/images/placeholder.svg", "/images/placeholder.svg"],
+    images: [
+      "/images/portofolio/absensi.png",
+      "/images/placeholder.svg",
+      "/images/placeholder.svg",
+    ],
     technologies: ["React", "Firebase", "Tailwind"],
   },
   {
     title: "Company Profile",
     description: "Built using Next.js and Tailwind.",
-    images: ["/images/portofolio/company.png", "/images/placeholder.svg", "/images/placeholder.svg"],
+    images: [
+      "/images/portofolio/company.png",
+      "/images/placeholder.svg",
+      "/images/placeholder.svg",
+    ],
     technologies: ["Next.js", "Tailwind"],
   },
   {
     title: "Payment App",
     description: "Developed using React Native.",
-    images: ["/images/portofolio/psp.png", "/images/placeholder.svg", "/images/placeholder.svg"],
+    images: [
+      "/images/portofolio/psp.png",
+      "/images/placeholder.svg",
+      "/images/placeholder.svg",
+    ],
     technologies: ["React Native"],
   },
   {
     title: "Dashboard Admin",
     description: "Developed using React Js.",
-    images: ["/images/portofolio/admin.png", "/images/placeholder.svg", "/images/placeholder.svg"],
+    images: [
+      "/images/portofolio/admin.png",
+      "/images/placeholder.svg",
+      "/images/placeholder.svg",
+    ],
     technologies: ["React"],
   },
 ];
@@ -83,9 +99,6 @@ export default function PortfolioSection() {
               </div>
               <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
               <p className="text-cyan-100/80 mb-4">{item.description}</p>
-              <div className="text-sm uppercase tracking-[0.2em] text-cyan-300 font-semibold">
-                Click to open
-              </div>
             </motion.div>
           ))}
         </div>

@@ -8,7 +8,7 @@ import PortfolioSection from "@/components/PortofolioSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,7 +20,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     const sections = document.querySelectorAll("section");
@@ -29,15 +29,8 @@ export default function Home() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  const backgroundClass =
-    activeSection === "skills"
-      ? "bg-gray-900 text-white"
-      : "bg-white text-black";
-
   return (
-    <div
-      className={`transition-colors duration-500 ease-in-out ${backgroundClass}`}
-    >
+    <div className="transition-colors duration-500 ease-in-out bg-slate-950 text-white">
       <Navbar />
       <section id="home">
         <HeroSection />
@@ -45,7 +38,7 @@ export default function Home() {
       <section id="skills">
         <SkillsSection />
       </section>
-      <section id="portofolio">
+      <section id="portfolio">
         <PortfolioSection />
       </section>
       <Footer />
